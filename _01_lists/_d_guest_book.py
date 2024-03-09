@@ -5,13 +5,17 @@
 from tkinter import messagebox, simpledialog, Tk
 import tkinter as tk
 
+
 # TODO 1) Complete the function by:
 #         a. Asking for the name of the guest to add
 #         b. Add the guest to list_of_guests
 #         c. Return the list_of_guests
 def add_guest(list_of_guests):
+    a = simpledialog.askstring(title="GuestBook", prompt="Enter the new Guest name to add")
 
-    return list()
+    list_of_guests.append(a)
+    return list_of_guests
+
 
 # TODO 2) Complete the function by:
 #         a. Asking for the name of the guest to remove
@@ -19,8 +23,13 @@ def add_guest(list_of_guests):
 #            the guest isn't in the list.
 #         c. Return the list_of_guests
 def remove_guest(list_of_guests):
+    r = simpledialog.askstring(title="GuestBook", prompt="Enter a Guest name to remove")
+    if r not in list_of_guests:
+        pass
+    else:
+        list_of_guests.remove(r)
+    return list_of_guests
 
-    return list()
 
 # TODO 3) Complete the function by:
 #         a. Display the names of the guests in the following format:
@@ -29,7 +38,15 @@ def remove_guest(list_of_guests):
 #            Guest 3. Jin
 #         b. If there are no guests, print "There are no guests"
 def print_guests(list_of_guests):
+    if list_of_guests is None:
+        messagebox.showinfo(title="GuestBook", message="There are no guests")
+    else:
+        guests = ""
+        for guest in list_of_guests:
+            guests += "Guest " + str(list_of_guests.index(guest) + 1) + ". " + guest + "\n"
+        messagebox.showinfo(title="GuestBook", message=guests)
     pass
+
 
 # ======================= DO NOT EDIT THE CODE BELOW =========================
 

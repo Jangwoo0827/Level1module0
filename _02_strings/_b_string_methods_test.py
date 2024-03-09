@@ -3,6 +3,7 @@ String methods: Create the necessary functions to make the tests pass
 """
 import unittest
 
+
 # TODO: 1) Implement the functions below so that the test cases in the string
 #  methods test file pass. You can delete the 'pass' instruction.
 #
@@ -12,28 +13,27 @@ import unittest
 
 # Given Strings s1 and s2, return the longer String
 def find_longer_string(s1, s2):
-
     return None
 
 
 # If String s contains the word "underscores", change all of the spaces to
 # underscores
 def format_spaces(s1):
-
-    return None
+    if :
+        w = s1.replace(' ', '_')
+    return w
 
 
 # Return the number of times String substring appears in String s
 def substring_count(s, substring):
-
     return None
 
 
 # Return true if String s is a palindrome
 # palindromes are words or phrases are read the same forward as backward.
 def palindrome(s):
-
     return None
+
 
 # ======================= DO NOT EDIT THE CODE BELOW =========================
 
