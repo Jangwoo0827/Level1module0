@@ -2,13 +2,14 @@ import random
 import tkinter as tk
 from tkinter import messagebox
 
+
 # TODO 1) Complete the function to return a string with as many
 #  underscores (_) as there are letters in the word to guess
 #  word_to_guess = orange (a string)
 #  return          ______ (a string with 6 underscores)
 def setup_new_word(word_to_guess):
-
     return str()
+
 
 # TODO 2) Complete the function to return whether the letter is in
 #  the word to guess
@@ -16,8 +17,8 @@ def setup_new_word(word_to_guess):
 #  letter = o (a string)
 #  return True
 def check_letter_in_word(word_to_guess, letter):
-
     return False
+
 
 # TODO 3) Complete the function to return the current guess with the
 #  letter in the same places (index) of the word to guess. For example,
@@ -27,8 +28,8 @@ def check_letter_in_word(word_to_guess, letter):
 #       return o__nge (a string)
 #  Remember that strings can't be changed directly!
 def replace_letter_in_word(word_to_guess, current_guess, letter):
-
     return str()
+
 
 # ====================== DO NOT EDIT THE CODE BELOW ===========================
 
@@ -55,7 +56,7 @@ class Hangman(tk.Tk):
         self.get_new_random_word()
 
         # UNCOMMENT TO SHOW HIDDEN WORD
-        #print(self.random_word)
+        # print(self.random_word)
 
         # Setup label to display keys pressed by the user
         self.label = tk.Label(self, bg='light grey', textvariable=self.entered_text)
@@ -75,7 +76,7 @@ class Hangman(tk.Tk):
             unguessed_letter = None
 
             while True:
-                random_index = random.randint(0, len(self.wtg)-1)
+                random_index = random.randint(0, len(self.wtg) - 1)
                 if self.wtg[random_index] == '_':
                     unguessed_letter = self.random_word[random_index]
                     break
