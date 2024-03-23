@@ -1,5 +1,6 @@
 import random
 import tkinter as tk
+from dataclasses import replace
 from tkinter import messagebox
 
 
@@ -8,7 +9,11 @@ from tkinter import messagebox
 #  word_to_guess = orange (a string)
 #  return          ______ (a string with 6 underscores)
 def setup_new_word(word_to_guess):
-    return str()
+    num_of_letter = len(word_to_guess)
+    underscores = ""
+    for a in range(num_of_letter):
+        underscores = underscores + "_ "
+    return underscores
 
 
 # TODO 2) Complete the function to return whether the letter is in
@@ -17,7 +22,10 @@ def setup_new_word(word_to_guess):
 #  letter = o (a string)
 #  return True
 def check_letter_in_word(word_to_guess, letter):
-    return False
+    for b in range(len(word_to_guess)):
+        if letter == word_to_guess[b]:
+            print("Letter guessed is in word")
+            return True
 
 
 # TODO 3) Complete the function to return the current guess with the
@@ -28,9 +36,25 @@ def check_letter_in_word(word_to_guess, letter):
 #       return o__nge (a string)
 #  Remember that strings can't be changed directly!
 def replace_letter_in_word(word_to_guess, current_guess, letter):
-    return str()
-
-
+    print(current_guess)
+    if letter in word_to_guess:
+        for c in range(len(word_to_guess)):
+            if letter == word_to_guess[c]:
+                current_guess[c] = letter
+    return current_guess
+    # for c in range(len(word_to_guess)):
+    #     if current_guess == word_to_guess[c]:
+    #         word_to_guess[c] = letter
+    #         if current_guess in word_to_guess:
+    #             d = word_to_guess.index(current_guess)
+    #             f = ""
+    #             for e in range(d-1):
+    #                 f = f + "_ "
+    #             f = f + current_guess
+    #             for g in range(len(word_to_guess) - d):
+    #                 f = f + "_ "
+    #                 print(f)
+    # return f
 # ====================== DO NOT EDIT THE CODE BELOW ===========================
 
 class Hangman(tk.Tk):
